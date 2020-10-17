@@ -11,7 +11,13 @@ import SwiftUI
 struct SafeVaultsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBar()
         }
+    }
+}
+
+struct SafeVaultsApp_Previews: PreviewProvider {
+    static var previews: some View {
+        TabBar()
     }
 }
