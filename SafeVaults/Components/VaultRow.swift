@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct VaultRow: View {
-    var token: String = "ETH-icon"
-    var name: String = "My vault"
-    var liquidationPrice: CGFloat = 100.00
-    var ratio: CGFloat = 180.00
-    var liquidationRatio: CGFloat = 150.00
+    var token: String
+    var name: String
+    var liquidationPrice: CGFloat
+    var ratio: CGFloat
+    var liquidationRatio: CGFloat
+    
+    func getRatioColor() -> Color {
+        if (self.ratio/self.liquidationRatio < 1) {
+            return Color.red
+        }
+        if (self.ratio/self.liquidationRatio < 1.25) {
+            return Color.yellow
+        }
+        return Color.green
+    }
     
     var body: some View {
         HStack {
@@ -33,15 +43,7 @@ struct VaultRow: View {
             Text("\(ratio, specifier: "%.2f")%")
                 .font(.subheadline)
                 .bold()
-                .if(ratio/liquidationRatio < 1){ view in
-                    view.foregroundColor(Color.red)
-                }
-                .if(ratio/liquidationRatio < 1.25){ view in
-                    view.foregroundColor(Color.yellow)
-                }
-                .if(ratio/liquidationRatio >= 1.25){ view in
-                    view.foregroundColor(Color.green)
-                }
+                .foregroundColor(self.getRatioColor())
         }
         .padding()
         .background(Color("Background 2"))
@@ -52,9 +54,21 @@ struct VaultRow: View {
 struct VaultRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            VaultRow()
+            VaultRow(
+                token: "ETH-icon",
+                name: "Test Vault",
+                liquidationPrice: 288,
+                ratio: 201,
+                liquidationRatio: 150
+            )
                 .previewLayout(.fixed(width: 300, height: 70))
-            VaultRow()
+            VaultRow(
+                token: "ETH-icon",
+                name: "Test Vault",
+                liquidationPrice: 288,
+                ratio: 201,
+                liquidationRatio: 150
+            )
                 .preferredColorScheme(.dark)
                 .previewLayout(.fixed(width: 300, height: 70))
         }

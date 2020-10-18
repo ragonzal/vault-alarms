@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomePage: View {
     @State var items: [Vault] = vaults
+    @State var selectedVault: Vault? = nil
+    @State var show = false
     
     var body: some View {
         ScrollView {
@@ -37,14 +39,27 @@ struct HomePage: View {
                 ForEach(items) { item in
                     VaultRow(
                         token: "\(item.collateral)-icon",
-                        name: item.name
+                        name: item.name,
+                        liquidationPrice: item.liquidationPrice,
+                        ratio: item.ratio,
+                        liquidationRatio: item.liquidationRatio
                     )
+                    .onTapGesture {
+                        self.selectedVault = item
+                    }
                     .padding(.vertical, 6.0)
                 }
+                .sheet(
+                    item: self.$selectedVault,
+                    content: {selectedVault in
+                        VaultDetailPage(vault: selectedVault)
+                    }
+                )
             }
             .padding(16)
             
             AddButton()
+                .padding(.bottom, 50)
         }
     }
 }

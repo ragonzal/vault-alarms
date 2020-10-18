@@ -20,12 +20,15 @@
 		00319AEF253B88AD00F79AB8 /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319AEE253B88AD00F79AB8 /* ConditionalModifier.swift */; };
 		00319AFB253B985500F79AB8 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319AFA253B985500F79AB8 /* SectionTitle.swift */; };
 		00319B03253BB27200F79AB8 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319B02253BB27200F79AB8 /* AddButton.swift */; };
+		00319B0B253BBD1500F79AB8 /* VaultDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319B0A253BBD1500F79AB8 /* VaultDetailPage.swift */; };
+		00319B16253BC74600F79AB8 /* DetailedAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319B15253BC74600F79AB8 /* DetailedAmount.swift */; };
+		00319B1B253BC9F000F79AB8 /* RatioDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319B1A253BC9F000F79AB8 /* RatioDetail.swift */; };
+		00319B20253BCEF300F79AB8 /* PriceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319B1F253BCEF300F79AB8 /* PriceDetail.swift */; };
 		00D99953252A25FE0004518A /* SafeVaultsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D99952252A25FE0004518A /* SafeVaultsApp.swift */; };
 		00D99957252A25FE0004518A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D99956252A25FE0004518A /* Assets.xcassets */; };
 		00D9995A252A25FE0004518A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D99959252A25FE0004518A /* Preview Assets.xcassets */; };
 		00D99965252A25FF0004518A /* SafeVaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D99964252A25FF0004518A /* SafeVaultsTests.swift */; };
 		00D99970252A25FF0004518A /* SafeVaultsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9996F252A25FF0004518A /* SafeVaultsUITests.swift */; };
-		00F57BEB25326CE2002B1A2D /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F57BEA25326CE2002B1A2D /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,10 @@
 		00319AEE253B88AD00F79AB8 /* ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalModifier.swift; sourceTree = "<group>"; };
 		00319AFA253B985500F79AB8 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		00319B02253BB27200F79AB8 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		00319B0A253BBD1500F79AB8 /* VaultDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultDetailPage.swift; sourceTree = "<group>"; };
+		00319B15253BC74600F79AB8 /* DetailedAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedAmount.swift; sourceTree = "<group>"; };
+		00319B1A253BC9F000F79AB8 /* RatioDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioDetail.swift; sourceTree = "<group>"; };
+		00319B1F253BCEF300F79AB8 /* PriceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDetail.swift; sourceTree = "<group>"; };
 		00D9994F252A25FE0004518A /* SafeVaults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeVaults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D99952252A25FE0004518A /* SafeVaultsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeVaultsApp.swift; sourceTree = "<group>"; };
 		00D99956252A25FE0004518A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +77,6 @@
 		00D9996B252A25FF0004518A /* SafeVaultsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeVaultsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D9996F252A25FF0004518A /* SafeVaultsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeVaultsUITests.swift; sourceTree = "<group>"; };
 		00D99971252A25FF0004518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00F57BEA25326CE2002B1A2D /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				00319AA9253B774E00F79AB8 /* StatsCard.swift */,
 				00319AAE253B776300F79AB8 /* VaultRow.swift */,
 				00319AFA253B985500F79AB8 /* SectionTitle.swift */,
+				00319B15253BC74600F79AB8 /* DetailedAmount.swift */,
+				00319B1A253BC9F000F79AB8 /* RatioDetail.swift */,
+				00319B1F253BCEF300F79AB8 /* PriceDetail.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -118,6 +127,7 @@
 				00319ABC253B778800F79AB8 /* VaultPage.swift */,
 				00319AD8253B7DEF00F79AB8 /* SettingsPage.swift */,
 				00319ADD253B7DF800F79AB8 /* StatsPage.swift */,
+				00319B0A253BBD1500F79AB8 /* VaultDetailPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -203,7 +213,6 @@
 		00F57BEF253270A7002B1A2D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				00F57BEA25326CE2002B1A2D /* Course.swift */,
 				00319AC1253B780800F79AB8 /* Vault.swift */,
 			);
 			path = Model;
@@ -340,7 +349,6 @@
 			files = (
 				00319AFB253B985500F79AB8 /* SectionTitle.swift in Sources */,
 				00319AAF253B776300F79AB8 /* VaultRow.swift in Sources */,
-				00F57BEB25326CE2002B1A2D /* Course.swift in Sources */,
 				00319B03253BB27200F79AB8 /* AddButton.swift in Sources */,
 				00319AAA253B774E00F79AB8 /* StatsCard.swift in Sources */,
 				00319AE3253B7E1700F79AB8 /* TabBar.swift in Sources */,
@@ -348,11 +356,15 @@
 				00D99953252A25FE0004518A /* SafeVaultsApp.swift in Sources */,
 				00319ABD253B778800F79AB8 /* VaultPage.swift in Sources */,
 				00319A9C253B771D00F79AB8 /* CloseButton.swift in Sources */,
+				00319B1B253BC9F000F79AB8 /* RatioDetail.swift in Sources */,
 				00319AA5253B773A00F79AB8 /* TokenLogo.swift in Sources */,
 				00319ADE253B7DF800F79AB8 /* StatsPage.swift in Sources */,
+				00319B0B253BBD1500F79AB8 /* VaultDetailPage.swift in Sources */,
 				00319AC2253B780800F79AB8 /* Vault.swift in Sources */,
+				00319B20253BCEF300F79AB8 /* PriceDetail.swift in Sources */,
 				00319AD9253B7DEF00F79AB8 /* SettingsPage.swift in Sources */,
 				00319AEF253B88AD00F79AB8 /* ConditionalModifier.swift in Sources */,
+				00319B16253BC74600F79AB8 /* DetailedAmount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
