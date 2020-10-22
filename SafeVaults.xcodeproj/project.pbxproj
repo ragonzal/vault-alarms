@@ -32,6 +32,7 @@
 		00D9995A252A25FE0004518A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D99959252A25FE0004518A /* Preview Assets.xcassets */; };
 		00D99965252A25FF0004518A /* SafeVaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D99964252A25FF0004518A /* SafeVaultsTests.swift */; };
 		00D99970252A25FF0004518A /* SafeVaultsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9996F252A25FF0004518A /* SafeVaultsUITests.swift */; };
+		00FA97EB25422D2300F72F73 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA97EA25422D2300F72F73 /* ConfigButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		00D9996B252A25FF0004518A /* SafeVaultsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeVaultsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D9996F252A25FF0004518A /* SafeVaultsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeVaultsUITests.swift; sourceTree = "<group>"; };
 		00D99971252A25FF0004518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00FA97EA25422D2300F72F73 /* ConfigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				00319B02253BB27200F79AB8 /* AddButton.swift */,
 				00319A9B253B771D00F79AB8 /* CloseButton.swift */,
+				00FA97EA25422D2300F72F73 /* ConfigButton.swift */,
 				00796AE625413C1700574ABF /* EmptyWatchlist.swift */,
 				00319AA4253B773A00F79AB8 /* TokenLogo.swift */,
 				00319AA9253B774E00F79AB8 /* StatsCard.swift */,
@@ -365,6 +368,7 @@
 				00319AE3253B7E1700F79AB8 /* TabBar.swift in Sources */,
 				00319AB4253B777A00F79AB8 /* HomePage.swift in Sources */,
 				00D99953252A25FE0004518A /* SafeVaultsApp.swift in Sources */,
+				00FA97EB25422D2300F72F73 /* ConfigButton.swift in Sources */,
 				00319ABD253B778800F79AB8 /* VaultPage.swift in Sources */,
 				00319A9C253B771D00F79AB8 /* CloseButton.swift in Sources */,
 				00891272253FEDD000F87C67 /* AddVaultPage.swift in Sources */,

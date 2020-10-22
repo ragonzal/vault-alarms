@@ -41,7 +41,6 @@ class Vaults: ObservableObject {
     init() {
         if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
             if let decoded = try? JSONDecoder().decode([Vault].self, from: data) {
-                print(decoded)
                 self.watchlist = decoded
                 return
             }
@@ -60,6 +59,15 @@ class Vaults: ObservableObject {
         watchlist.append(vault)
         save()
     }
+    
+    func remove(vault: Vault) {
+        print("Watchlist length: \(watchlist.count)")
+        let newWatchlist = watchlist.filter{$0.id != vault.id}
+        print("newWatchlist length: \(newWatchlist.count)")
+        watchlist = newWatchlist
+        save()
+    }
+    
 }
 
 var vaults: [Vault] = []

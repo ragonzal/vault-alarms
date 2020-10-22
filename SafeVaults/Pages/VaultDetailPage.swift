@@ -11,6 +11,8 @@ struct VaultDetailPage: View {
     var vault: Vault
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var vaults: Vaults
+    @State private var showingActionSheet = false
     @State var activeAlert = false
     
     var body: some View {
@@ -19,10 +21,19 @@ struct VaultDetailPage: View {
                 .navigationTitle(vault.name)
                 .navigationBarTitleDisplayMode(.inline)
             
-            CloseButton()
+            ConfigButton()
                 .padding(20)
                 .onTapGesture {
-                    presentationMode.wrappedValue.dismiss()
+                    self.showingActionSheet = true
+                }
+                .actionSheet(isPresented: $showingActionSheet) {
+                    ActionSheet(title: Text("Vault settings"), buttons: [
+                        .default(Text("Remove vault")) {
+                            self.vaults.remove(vault: vault)
+                            presentationMode.wrappedValue.dismiss()
+                        },
+                        .cancel()
+                    ])
                 }
         }.onAppear {
             activeAlert = vault.activeAlert
@@ -104,8 +115,8 @@ struct VaultDetailPage: View {
 
 struct VaultDetailPage_Previews: PreviewProvider {
     static var previews: some View {
-        VaultDetailPage(vault: vaults[0])
-        VaultDetailPage(vault: vaults[0])
+        VaultDetailPage(vault: Vault())
+        VaultDetailPage(vault: Vault())
             .preferredColorScheme(.dark)
     }
 }
