@@ -7,76 +7,59 @@
 
 import SwiftUI
 
-struct Vault: Identifiable {
+class Vault: Identifiable, Codable {
     var id = UUID()
-    var name: String
-    var collateral: String
-    var number: Int
-    var userAddress: String
+    var name: String = "Name"
+    var collateral: String = "ETH"
+    var number: Int = 0
+    var userAddress: String = "0x"
     
-    var liquidationPrice: CGFloat
-    var liquidationRatio: CGFloat
-    var ratio: CGFloat
+    var liquidationPrice: CGFloat = 0.0
+    var liquidationRatio: CGFloat = 0.0
+    var ratio: CGFloat = 0.0
     
-    var collateralAmount: CGFloat
-    var debtAmount: CGFloat
+    var collateralAmount: CGFloat = 0.0
+    var debtAmount: CGFloat = 0.0
     
-    var collateralPrice: CGFloat
-    var collateralNextPrice: CGFloat
+    var collateralPrice: CGFloat = 0.0
+    var collateralNextPrice: CGFloat = 0.0
+    
+    var activeAlert: Bool = true
+    
+    func shortUserAddress() -> String {
+        if self.userAddress.count < 10 {
+            return self.userAddress
+        }
+        return "\(self.userAddress.prefix(5))...\(self.userAddress.suffix(3))"
+    }
 }
 
+class Vaults: ObservableObject {
+    @Published private(set) var watchlist: [Vault]
+    static let saveKey = "SavedWatchlist"
+    
+    init() {
+        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
+            if let decoded = try? JSONDecoder().decode([Vault].self, from: data) {
+                print(decoded)
+                self.watchlist = decoded
+                return
+            }
+        }
+        
+        self.watchlist = []
+    }
+    
+    private func save() {
+        if let encoded = try? JSONEncoder().encode(watchlist) {
+            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+        }
+    }
+    
+    func add(_ vault: Vault) {
+        watchlist.append(vault)
+        save()
+    }
+}
 
-var vaults = [
-    Vault(
-        name: "My main vault",
-        collateral: "ETH",
-        number: 12315,
-        userAddress: "0xC55...f19",
-        liquidationPrice: 200,
-        liquidationRatio: 150.0,
-        ratio: 284,
-        collateralAmount: 20000,
-        debtAmount: 400000,
-        collateralPrice: 367.59,
-        collateralNextPrice: 390.01
-    ),
-    Vault(
-        name: "Bitcoin vault",
-        collateral: "WBTC",
-        number: 12315,
-        userAddress: "0xC55...f19",
-        liquidationPrice: 250,
-        liquidationRatio: 150.0,
-        ratio: 220,
-        collateralAmount: 234,
-        debtAmount: 100123,
-        collateralPrice: 11390.01,
-        collateralNextPrice: 11394.34
-    ),
-    Vault(
-        name: "Another one",
-        collateral: "USDC",
-        number: 12315,
-        userAddress: "0xC55...f19",
-        liquidationPrice: 1.02,
-        liquidationRatio: 100,
-        ratio: 99,
-        collateralAmount: 130000,
-        debtAmount: 13141,
-        collateralPrice: 1.00,
-        collateralNextPrice: 1.00
-    ),
-    Vault(
-        name: "COMP Vault",
-        collateral: "COMP",
-        number: 12315,
-        userAddress: "0xC55...f19",
-        liquidationPrice: 102,
-        liquidationRatio: 125,
-        ratio: 150,
-        collateralAmount: 54312,
-        debtAmount: 12314,
-        collateralPrice: 104.90,
-        collateralNextPrice: 104.86
-    )
-]
+var vaults: [Vault] = []

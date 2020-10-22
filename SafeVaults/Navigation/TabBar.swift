@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabBar: View {
+    var vaults = Vaults()
+    
     var body: some View {
         TabView {
             NavigationView {
@@ -34,6 +36,7 @@ struct TabBar: View {
                 Text("Settings")
             }
         }
+        .environmentObject(vaults)
     }
 }
 

@@ -47,7 +47,7 @@ struct VaultRow: View {
         }
         .padding()
         .background(Color("Background 2"))
-        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
 

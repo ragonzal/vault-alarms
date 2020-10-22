@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct VaultDetailPage: View {
-    @Environment(\.presentationMode) var presentationMode
     var vault: Vault
+    
+    @Environment(\.presentationMode) var presentationMode
+    @State var activeAlert = false
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -22,6 +24,8 @@ struct VaultDetailPage: View {
                 .onTapGesture {
                     presentationMode.wrappedValue.dismiss()
                 }
+        }.onAppear {
+            activeAlert = vault.activeAlert
         }
     }
     
@@ -38,7 +42,7 @@ struct VaultDetailPage: View {
                     Text(vault.name)
                         .font(.title3).bold()
                         .foregroundColor(.white)
-                    Text("# \(vault.number) - \(vault.userAddress)")
+                    Text("# \(vault.number) - \(vault.shortUserAddress())")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .opacity(0.8)
@@ -57,10 +61,18 @@ struct VaultDetailPage: View {
             
             stats
         }
+        .background(Color("Background 1"))
     }
     
     var stats: some View {
         VStack(alignment: .leading, spacing: 25) {
+            
+            Toggle(isOn: $activeAlert) {
+                Text("Active alerts")
+            }
+            
+            Divider()
+            
             VStack(alignment: .center) {
                 PriceDetail(
                     currentPrice: vault.collateralPrice,

@@ -8,59 +8,76 @@
 import SwiftUI
 
 struct HomePage: View {
-    @State var items: [Vault] = vaults
+    @EnvironmentObject var vaults: Vaults
+    
     @State var selectedVault: Vault? = nil
     @State var show = false
     
+    @ViewBuilder
     var body: some View {
-        ScrollView {
-            LazyVGrid(
-                columns: [GridItem(.adaptive(minimum: 159), spacing: 16)],
-                spacing: 16) {
-                VStack {
-                    StatsCard(
-                        token: "ETH-icon"
-                    )
-                    .frame(maxHeight: 300)
-                }
-                VStack {
-                    StatsCard(
-                        token: "WBTC-icon"
-                    )
-                    .frame(maxHeight: 300)
-                }
-            }
-            .padding(16)
-            
-            SectionTitle(title: "Watchlist")
-            LazyVGrid(
-                columns: [GridItem(.adaptive(minimum: 240), spacing: 16, alignment: .top)],
-                spacing: 0) {
-                ForEach(items) { item in
-                    VaultRow(
-                        token: "\(item.collateral)-icon",
-                        name: item.name,
-                        liquidationPrice: item.liquidationPrice,
-                        ratio: item.ratio,
-                        liquidationRatio: item.liquidationRatio
-                    )
-                    .onTapGesture {
-                        self.selectedVault = item
+        ZStack {
+            Rectangle().foregroundColor(Color("Background 1")).edgesIgnoringSafeArea(.all)
+            ScrollView {
+                LazyVGrid(
+                    columns: [GridItem(.adaptive(minimum: 159), spacing: 16)],
+                    spacing: 16) {
+                    VStack {
+                        StatsCard(
+                            token: "ETH-icon"
+                        )
+                        .frame(maxHeight: 300)
                     }
-                    .padding(.vertical, 6.0)
-                }
-                .sheet(
-                    item: self.$selectedVault,
-                    content: {selectedVault in
-                        VaultDetailPage(vault: selectedVault)
+                    VStack {
+                        StatsCard(
+                            token: "WBTC-icon"
+                        )
+                        .frame(maxHeight: 300)
                     }
-                )
-            }
-            .padding(16)
-            
-            AddButton()
+                }
+                .padding(16)
+                
+                SectionTitle(title: "Watchlist")
+                if vaults.watchlist.isEmpty {
+                    EmptyWatchlist()
+                }else{
+                    watchlist
+                }
+                
+                NavigationLink(destination: AddVaultPage()) {
+                    AddButton()
+                }
+                .buttonStyle(PlainButtonStyle())
                 .padding(.bottom, 50)
+                
+            }
         }
+    }
+    
+    var watchlist: some View {
+        LazyVGrid(
+            columns: [GridItem(.adaptive(minimum: 240), spacing: 16, alignment: .top)],
+            spacing: 0) {
+            ForEach(vaults.watchlist) { item in
+                VaultRow(
+                    token: "\(item.collateral)-icon",
+                    name: item.name,
+                    liquidationPrice: item.liquidationPrice,
+                    ratio: item.ratio,
+                    liquidationRatio: item.liquidationRatio
+                )
+                .onTapGesture {
+                    self.selectedVault = item
+                }
+                .padding(.vertical, 1.0)
+            }
+            .sheet(
+                item: self.$selectedVault,
+                content: {selectedVault in
+                    VaultDetailPage(vault: selectedVault)
+                }
+            )
+        }
+        .padding(16)
     }
 }
 
@@ -73,3 +90,5 @@ struct HomePage_Previews: PreviewProvider {
         }
     }
 }
+
+
