@@ -21,11 +21,11 @@ struct TabBar: View {
             
             NavigationView {
                 StatsPage()
-                    .navigationTitle("Stats")
+                    .navigationTitle("OSM Prices")
             }
             .tabItem {
                 Image(systemName: "chart.bar")
-                Text("Stats")
+                Text("Prices")
             }
             
             NavigationView {

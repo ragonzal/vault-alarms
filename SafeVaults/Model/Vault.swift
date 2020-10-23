@@ -37,21 +37,29 @@ class Vault: Identifiable, Codable {
 class Vaults: ObservableObject {
     @Published private(set) var watchlist: [Vault]
     static let saveKey = "SavedWatchlist"
+    static let suitName = "group.com.rg.SafeVaults"
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
-            if let decoded = try? JSONDecoder().decode([Vault].self, from: data) {
-                self.watchlist = decoded
-                return
+        print("Vaults initiated!")
+        if let userDefaults = UserDefaults(suiteName: Self.suitName) {
+            if let data = userDefaults.data(forKey: Self.saveKey) {
+                if let decoded = try? JSONDecoder().decode([Vault].self, from: data) {
+                    self.watchlist = decoded
+                    self.refreshData()
+                    return
+                }
             }
         }
+        
         
         self.watchlist = []
     }
     
-    private func save() {
+    func save() {
         if let encoded = try? JSONEncoder().encode(watchlist) {
-            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+            if let userDefaults = UserDefaults(suiteName: Self.suitName) {
+                userDefaults.set(encoded, forKey: Self.saveKey)
+            }
         }
     }
     
@@ -61,11 +69,28 @@ class Vaults: ObservableObject {
     }
     
     func remove(vault: Vault) {
-        print("Watchlist length: \(watchlist.count)")
         let newWatchlist = watchlist.filter{$0.id != vault.id}
-        print("newWatchlist length: \(newWatchlist.count)")
         watchlist = newWatchlist
         save()
+    }
+    
+    func refreshData() {
+        for vault in self.watchlist {
+            print("Refetching!")
+            updateVault(vault: vault, vaults: self)
+        }
+        save()
+    }
+    
+    func reloadData() {
+        if let userDefaults = UserDefaults(suiteName: Self.suitName) {
+            if let data = userDefaults.data(forKey: Self.saveKey) {
+                if let decoded = try? JSONDecoder().decode([Vault].self, from: data) {
+                    self.watchlist = decoded
+                    return
+                }
+            }
+        }
     }
     
 }

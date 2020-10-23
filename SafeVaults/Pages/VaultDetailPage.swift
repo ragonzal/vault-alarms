@@ -53,7 +53,7 @@ struct VaultDetailPage: View {
                     Text(vault.name)
                         .font(.title3).bold()
                         .foregroundColor(.white)
-                    Text("# \(vault.number) - \(vault.shortUserAddress())")
+                    Text("Owner: \(vault.shortUserAddress())")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .opacity(0.8)

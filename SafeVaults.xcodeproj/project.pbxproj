@@ -33,6 +33,21 @@
 		00D99965252A25FF0004518A /* SafeVaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D99964252A25FF0004518A /* SafeVaultsTests.swift */; };
 		00D99970252A25FF0004518A /* SafeVaultsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9996F252A25FF0004518A /* SafeVaultsUITests.swift */; };
 		00FA97EB25422D2300F72F73 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA97EA25422D2300F72F73 /* ConfigButton.swift */; };
+		00FA97F32542347200F72F73 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA97F22542347200F72F73 /* API.swift */; };
+		00FA98012542464D00F72F73 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FA98002542464D00F72F73 /* WidgetKit.framework */; };
+		00FA98032542464D00F72F73 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FA98022542464D00F72F73 /* SwiftUI.framework */; };
+		00FA98062542464D00F72F73 /* SafeVaultWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA98052542464D00F72F73 /* SafeVaultWidget.swift */; };
+		00FA98092542465000F72F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00FA98082542465000F72F73 /* Assets.xcassets */; };
+		00FA980B2542465000F72F73 /* SafeVaultWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 00FA98072542464D00F72F73 /* SafeVaultWidget.intentdefinition */; };
+		00FA980C2542465000F72F73 /* SafeVaultWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 00FA98072542464D00F72F73 /* SafeVaultWidget.intentdefinition */; };
+		00FA980F2542465000F72F73 /* SafeVaultWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 00FA97FE2542464D00F72F73 /* SafeVaultWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		00FA9818254247A700F72F73 /* Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319AC1253B780800F79AB8 /* Vault.swift */; };
+		00FA981D254247AE00F72F73 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00891279253FF96A00F87C67 /* Helpers.swift */; };
+		00FA9822254247B900F72F73 /* VaultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319AAE253B776300F79AB8 /* VaultRow.swift */; };
+		00FA9827254247C500F72F73 /* TokenLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319AA4253B773A00F79AB8 /* TokenLogo.swift */; };
+		00FA982C254247CE00F72F73 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA97F22542347200F72F73 /* API.swift */; };
+		00FA982D254247CE00F72F73 /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00319AEE253B88AD00F79AB8 /* ConditionalModifier.swift */; };
+		00FA9832254247D900F72F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D99956252A25FE0004518A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +65,28 @@
 			remoteGlobalIDString = 00D9994E252A25FE0004518A;
 			remoteInfo = SafeVaults;
 		};
+		00FA980D2542465000F72F73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00D99947252A25FE0004518A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00FA97FD2542464D00F72F73;
+			remoteInfo = SafeVaultWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		00FA98132542465000F72F73 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				00FA980F2542465000F72F73 /* SafeVaultWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00319A9B253B771D00F79AB8 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -85,6 +121,15 @@
 		00D9996F252A25FF0004518A /* SafeVaultsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeVaultsUITests.swift; sourceTree = "<group>"; };
 		00D99971252A25FF0004518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00FA97EA25422D2300F72F73 /* ConfigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
+		00FA97F22542347200F72F73 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		00FA97FE2542464D00F72F73 /* SafeVaultWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafeVaultWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		00FA98002542464D00F72F73 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		00FA98022542464D00F72F73 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		00FA98052542464D00F72F73 /* SafeVaultWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeVaultWidget.swift; sourceTree = "<group>"; };
+		00FA98072542464D00F72F73 /* SafeVaultWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SafeVaultWidget.intentdefinition; sourceTree = "<group>"; };
+		00FA98082542465000F72F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00FA980A2542465000F72F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00FA98372542584100F72F73 /* SafeVaults.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeVaults.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +151,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FA97FB2542464D00F72F73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FA98032542464D00F72F73 /* SwiftUI.framework in Frameworks */,
+				00FA98012542464D00F72F73 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +208,7 @@
 		00319AF3253B88BB00F79AB8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				00FA97F22542347200F72F73 /* API.swift */,
 				00319AEE253B88AD00F79AB8 /* ConditionalModifier.swift */,
 			);
 			path = Lib;
@@ -165,6 +220,8 @@
 				00D99951252A25FE0004518A /* SafeVaults */,
 				00D99963252A25FF0004518A /* SafeVaultsTests */,
 				00D9996E252A25FF0004518A /* SafeVaultsUITests */,
+				00FA98042542464D00F72F73 /* SafeVaultWidget */,
+				00FA97FF2542464D00F72F73 /* Frameworks */,
 				00D99950252A25FE0004518A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +232,7 @@
 				00D9994F252A25FE0004518A /* SafeVaults.app */,
 				00D99960252A25FF0004518A /* SafeVaultsTests.xctest */,
 				00D9996B252A25FF0004518A /* SafeVaultsUITests.xctest */,
+				00FA97FE2542464D00F72F73 /* SafeVaultWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +240,7 @@
 		00D99951252A25FE0004518A /* SafeVaults */ = {
 			isa = PBXGroup;
 			children = (
+				00FA98372542584100F72F73 /* SafeVaults.entitlements */,
 				00D99952252A25FE0004518A /* SafeVaultsApp.swift */,
 				00319AA0253B772300F79AB8 /* Components */,
 				00F57BEF253270A7002B1A2D /* Model */,
@@ -230,6 +289,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		00FA97FF2542464D00F72F73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00FA98002542464D00F72F73 /* WidgetKit.framework */,
+				00FA98022542464D00F72F73 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00FA98042542464D00F72F73 /* SafeVaultWidget */ = {
+			isa = PBXGroup;
+			children = (
+				00FA98052542464D00F72F73 /* SafeVaultWidget.swift */,
+				00FA98072542464D00F72F73 /* SafeVaultWidget.intentdefinition */,
+				00FA98082542465000F72F73 /* Assets.xcassets */,
+				00FA980A2542465000F72F73 /* Info.plist */,
+			);
+			path = SafeVaultWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,10 +319,12 @@
 				00D9994B252A25FE0004518A /* Sources */,
 				00D9994C252A25FE0004518A /* Frameworks */,
 				00D9994D252A25FE0004518A /* Resources */,
+				00FA98132542465000F72F73 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				00FA980E2542465000F72F73 /* PBXTargetDependency */,
 			);
 			name = SafeVaults;
 			productName = SafeVaults;
@@ -286,6 +367,23 @@
 			productReference = 00D9996B252A25FF0004518A /* SafeVaultsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		00FA97FD2542464D00F72F73 /* SafeVaultWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00FA98102542465000F72F73 /* Build configuration list for PBXNativeTarget "SafeVaultWidgetExtension" */;
+			buildPhases = (
+				00FA97FA2542464D00F72F73 /* Sources */,
+				00FA97FB2542464D00F72F73 /* Frameworks */,
+				00FA97FC2542464D00F72F73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SafeVaultWidgetExtension;
+			productName = SafeVaultWidgetExtension;
+			productReference = 00FA97FE2542464D00F72F73 /* SafeVaultWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -306,6 +404,9 @@
 						CreatedOnToolsVersion = 12.0.1;
 						TestTargetID = 00D9994E252A25FE0004518A;
 					};
+					00FA97FD2542464D00F72F73 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 00D9994A252A25FE0004518A /* Build configuration list for PBXProject "SafeVaults" */;
@@ -324,6 +425,7 @@
 				00D9994E252A25FE0004518A /* SafeVaults */,
 				00D9995F252A25FF0004518A /* SafeVaultsTests */,
 				00D9996A252A25FF0004518A /* SafeVaultsUITests */,
+				00FA97FD2542464D00F72F73 /* SafeVaultWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +454,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00FA97FC2542464D00F72F73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FA9832254247D900F72F73 /* Assets.xcassets in Resources */,
+				00FA98092542465000F72F73 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FA980C2542465000F72F73 /* SafeVaultWidget.intentdefinition in Sources */,
 				00319AFB253B985500F79AB8 /* SectionTitle.swift in Sources */,
 				00796AE725413C1700574ABF /* EmptyWatchlist.swift in Sources */,
 				00319AAF253B776300F79AB8 /* VaultRow.swift in Sources */,
@@ -374,6 +486,7 @@
 				00891272253FEDD000F87C67 /* AddVaultPage.swift in Sources */,
 				00319B1B253BC9F000F79AB8 /* RatioDetail.swift in Sources */,
 				00319AA5253B773A00F79AB8 /* TokenLogo.swift in Sources */,
+				00FA97F32542347200F72F73 /* API.swift in Sources */,
 				00319ADE253B7DF800F79AB8 /* StatsPage.swift in Sources */,
 				00319B0B253BBD1500F79AB8 /* VaultDetailPage.swift in Sources */,
 				00319AC2253B780800F79AB8 /* Vault.swift in Sources */,
@@ -400,6 +513,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00FA97FA2542464D00F72F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00FA9818254247A700F72F73 /* Vault.swift in Sources */,
+				00FA980B2542465000F72F73 /* SafeVaultWidget.intentdefinition in Sources */,
+				00FA98062542464D00F72F73 /* SafeVaultWidget.swift in Sources */,
+				00FA9822254247B900F72F73 /* VaultRow.swift in Sources */,
+				00FA9827254247C500F72F73 /* TokenLogo.swift in Sources */,
+				00FA981D254247AE00F72F73 /* Helpers.swift in Sources */,
+				00FA982C254247CE00F72F73 /* API.swift in Sources */,
+				00FA982D254247CE00F72F73 /* ConditionalModifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -412,6 +540,11 @@
 			isa = PBXTargetDependency;
 			target = 00D9994E252A25FE0004518A /* SafeVaults */;
 			targetProxy = 00D9996C252A25FF0004518A /* PBXContainerItemProxy */;
+		};
+		00FA980E2542465000F72F73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00FA97FD2542464D00F72F73 /* SafeVaultWidgetExtension */;
+			targetProxy = 00FA980D2542465000F72F73 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -535,8 +668,10 @@
 		00D99975252A25FF0004518A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SafeVaults/SafeVaults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SafeVaults/Preview Content\"";
 				DEVELOPMENT_TEAM = WAR65BN6YX;
@@ -557,8 +692,10 @@
 		00D99976252A25FF0004518A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SafeVaults/SafeVaults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SafeVaults/Preview Content\"";
 				DEVELOPMENT_TEAM = WAR65BN6YX;
@@ -660,6 +797,48 @@
 			};
 			name = Release;
 		};
+		00FA98112542465000F72F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WAR65BN6YX;
+				INFOPLIST_FILE = SafeVaultWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rg.SafeVaults.SafeVaultWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00FA98122542465000F72F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WAR65BN6YX;
+				INFOPLIST_FILE = SafeVaultWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rg.SafeVaults.SafeVaultWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -695,6 +874,15 @@
 			buildConfigurations = (
 				00D9997B252A25FF0004518A /* Debug */,
 				00D9997C252A25FF0004518A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00FA98102542465000F72F73 /* Build configuration list for PBXNativeTarget "SafeVaultWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00FA98112542465000F72F73 /* Debug */,
+				00FA98122542465000F72F73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

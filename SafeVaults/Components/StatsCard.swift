@@ -9,29 +9,29 @@ import SwiftUI
 
 struct StatsCard: View {
     var token: String = "ETH-icon"
-    var currentPrice: CGFloat = 368.00
-    var nextPrice: CGFloat = 367.19
+    var currentPrice: CGFloat = 0
+    var nextPrice: CGFloat = 0
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4.0) {
+        HStack {
             Spacer()
-            HStack {
+            
+            VStack(alignment: .center, spacing: 4.0) {
+                Spacer()
                 TokenLogo(
                     token: token, size: 50
                 )
-                Spacer()
                 Text("$ \(currentPrice, specifier: "%.2f")")
                     .font(.title3)
                     .bold()
-            }
-            HStack {
+                    .padding(.top, 3.0)
+                    
                 Spacer()
                 Text("Next: $ \(nextPrice, specifier: "%.2f")")
-                    .font(.subheadline)
+                    .font(.footnote)
                     .multilineTextAlignment(.center)
                 Spacer()
             }
-            .padding(5.0)
             Spacer()
         }
         .padding(16)

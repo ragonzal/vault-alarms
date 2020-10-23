@@ -23,13 +23,17 @@ struct HomePage: View {
                     spacing: 16) {
                     VStack {
                         StatsCard(
-                            token: "ETH-icon"
+                            token: "ETH-icon",
+                            currentPrice: 414.48,
+                            nextPrice: 412.14
                         )
                         .frame(maxHeight: 300)
                     }
                     VStack {
                         StatsCard(
-                            token: "WBTC-icon"
+                            token: "WBTC-icon",
+                            currentPrice: 13020.39,
+                            nextPrice: 12883.13
                         )
                         .frame(maxHeight: 300)
                     }
